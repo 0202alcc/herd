@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
 html,
 body {
     height: 100%;
@@ -8,6 +10,10 @@ body {
 input{
     text-align: left;
     text-indent: 20px;
+}
+h3 {
+    font-family: 'Roboto Slab', serif;
+    color: white;
 }
 #map {
     height: 100%;
@@ -23,8 +29,8 @@ input{
 .centertwo{
     margin: auto;
     padding: 15%;
-    padding-top: 3.75%;
-    padding-bottom: 3.75%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     text-align: center;
 }
 .snav {
@@ -126,6 +132,7 @@ input {
 #logofront {
     display: block;
     margin: auto;
+    margin-top: 1.3575%;
 }
 .tabImage {
     border-radius: 50%;
