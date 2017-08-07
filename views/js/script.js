@@ -25,7 +25,7 @@ function showPosition(position) {
 		center: home,
 		zoom: 15
 	})
-
+	document.getElementById("loading").style.display = "none"
 	var database = firebase.database()
 	var user = firebase.auth().currentUser
 	var profile = user.photoURL

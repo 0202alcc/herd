@@ -54,14 +54,8 @@
 	<div id="tabs">
 	</div>
 	</ul>
-	<div id="map" class="col s12 m12"></div>
-	<a href="#" data-activates="slide-out" class="button-collapse"><img id="ppfp" src="" /></a>
-	<!--button class="waves-effect waves-light btn" onclick={signInWithGoogle()}>Sign in</button>
-		<button class="waves-effect waves-light btn red accent-2" id="logout" onclick={signOut()}>Log out</button>
-		<button onclick={getLocation()}>Try It</button-->
-	<p id="demo"></p>
-	<img id="pfp" src="" />
-
+	
+	<center id="loading">
 	<div class="preloader-wrapper big active">
     <div class="spinner-layer spinner-white-only">
       <div class="circle-clipper left">
@@ -73,6 +67,15 @@
       </div>
     </div>
   </div>
+  </center>
+	
+	<div id="map" class="col s12 m12"></div>
+	<a href="#" data-activates="slide-out" class="button-collapse"><img id="ppfp" src="" /></a>
+	<!--button class="waves-effect waves-light btn" onclick={signInWithGoogle()}>Sign in</button>
+		<button class="waves-effect waves-light btn red accent-2" id="logout" onclick={signOut()}>Log out</button>
+		<button onclick={getLocation()}>Try It</button-->
+	<p id="demo"></p>
+	<img id="pfp" src="" />
 
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo3UzCxtyZJCOyBA60T4R_ZXwEswrnrJQ&callback=initMap">
 	</script>

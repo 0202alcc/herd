@@ -141,3 +141,10 @@ input {
     margin-top: 6px;
     margin-bottom: 6px;
 }
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -29px;
+    margin-top: -29px;
+}
