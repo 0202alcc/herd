@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
+	<script src="js/firebaseConfig.js"></script>
+	<script src="js/firebaseAuth.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+
+<body>
+	<div id="login-screen">
+		<img id="logofront" class="center-align" src="images/herdlogo.png" />
+		<br>
+		<br>
+		<div class="centertwo">
+			<a class="waves-effect waves-light btn" id="signin-button" onclick={signInWithGoogle()}>Sign in with Google to Input Password</a>
+		</div>
+		<div id="center">
+			<form class="col s12 l10 m10">
+				<div class="row">
+					<form class="col s12">
+						<div class="input-field col s12 m12 center">
+							<input disabled id="code" type="text" class="validate">
+							<label id="fpassword" for="last_name">Family Password</label>
+						</div>
+					</form>
+				</div>
+			</form>
+			<button disabled class="waves-effect waves-light btn" id="submit-button" onclick={checkForCode()}>Submit Code</button>
+		</div>
+	</div>
+	<span id="hidden">
+		<ul id="slide-out" class="side-nav">
+			<li>
+				<div class="user-view">
+					<a href="#!user"><img class="snav" id="pfp" src="" /></a>
+					<a href="#!name"><span class="white-text name truncate" id="google-displayName"></span></a>
+	<a href="#!email"><span class="white-text email truncate" id="google-email"></span></a>
+	</div>
+	</li>
+
+	<div class="background">
+		<li><a href="#!" class="white-text truncate"><i class="settings white-text material-icons" style="margin-right: 10px;">settings</i>  Settings</a></li>
+		<li><a href="#!" class="white-text truncate">Second Link</a></li>
+	</div>
+	<li><a class="white-text subheader truncate">Family:</a></li>
+	<div id="tabs">
+	</div>
+	</ul>
+	<div id="map" class="col s12 m12"></div>
+	<a href="#" data-activates="slide-out" class="button-collapse"><img id="ppfp" src="" /></a>
+	<!--button class="waves-effect waves-light btn" onclick={signInWithGoogle()}>Sign in</button>
+		<button class="waves-effect waves-light btn red accent-2" id="logout" onclick={signOut()}>Log out</button>
+		<button onclick={getLocation()}>Try It</button-->
+	<p id="demo"></p>
+	<img id="pfp" src="" />
+
+	<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-white-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo3UzCxtyZJCOyBA60T4R_ZXwEswrnrJQ&callback=initMap">
+	</script>
+
+	<preference name="OverrideUserAgent" value"Mozilla/5.0 Google" />
+	<script src="js/script.js"></script>
+	<script>
+		// Initialize collapse button
+		$(".button-collapse").sideNav();
+
+		// Mobile Safari in standalone mode
+		if (("standalone" in window.navigator) && window.navigator.standalone) {
+
+			// If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
+			var noddy, remotes = true;
+
+			document.addEventListener('click', function(event) {
+
+				noddy = event.target;
+
+				// Bubble up until we hit link or top HTML element. Warning: BODY element is not compulsory so better to stop on HTML
+				while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+					noddy = noddy.parentNode;
+				}
+
+				if ('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes)) {
+					event.preventDefault();
+					document.location.href = noddy.href;
+				}
+
+			}, false);
+		}
+	</script>
+	</span>
+</body>
+
+</html>

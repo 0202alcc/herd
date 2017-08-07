@@ -1,0 +1,143 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0a4058;
+}
+input{
+    text-align: left;
+    text-indent: 20px;
+}
+#map {
+    height: 100%;
+}
+#center{
+    margin: auto;
+    padding: 15%;
+    padding-top: 3.75%;
+    padding-bottom: 3.75%;
+    text-align: center;
+    background-color: grey;
+}
+.centertwo{
+    margin: auto;
+    padding: 15%;
+    padding-top: 3.75%;
+    padding-bottom: 3.75%;
+    text-align: center;
+}
+.snav {
+    border-radius: 50%;
+    height: 10%;
+    max-height: 75px;
+    min-height: 75px;
+    max-width: 75px;
+    min-width: 75px;
+}
+#hidden {
+    display: none;
+}
+.userselect{
+    border-radius: 50%;
+    height: 10%;
+    max-height: 75px;
+    min-height: 75px;
+}
+.row{
+    margin-top: 20px;
+}
+#slide-out{
+    background-color: #0a4058;
+    max-width: 50%;
+}
+#google-displayName{
+    margin: 0;
+}
+#ppfp {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    height: 10%;
+    max-height: 100px;
+}
+.background{
+    background-color: #58a618;
+    border-bottom: inset;
+    border-bottom-color: white;
+    border-bottom-width: 9px;
+}
+.name{
+    font-size: 16px;
+}
+.email{
+    font-size: 16px;
+}
+input {
+    margin: 0;
+}
+.caption-background {
+    height: 200px;
+    background: blue;
+}
+.hidden {
+    display: none;
+}
+#code{
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    margin-bottom: 10px;
+}
+#fpassword{
+    margin-left: 20px;
+}
+#code label {
+    color: white;
+}
+/* label focus color */
+#code[type=text]:focus + label {
+    color: white;
+}
+/* label underline focus color */
+#code[type=text]:focus {
+     border-bottom: 1px solid black;
+    box-shadow: 0 1px 0 0 black;
+}
+#code[type=password]:focus + label {
+    color: white;
+}
+/* label underline focus color */
+#code[type=password]:focus {
+     border-bottom: 1px solid black;
+    box-shadow: 0 1px 0 0 black;
+}
+
+#signin-button{
+    background-color: #58a618;
+    padding-bottom: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#submit-button{
+    background-color: #0a4058;
+}
+#logofront {
+    display: block;
+    margin: auto;
+}
+.tabImage {
+    border-radius: 50%;
+    height: 10%;
+    max-height: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    min-width: 48px;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+#tabs {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
