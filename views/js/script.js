@@ -1,6 +1,17 @@
 var map, infoWindow
 var x = document.getElementById("demo");
 
+var minorComments = {
+	late: "I'm running late",
+	sick: "Not feeling well",
+	busy: "Stuck at work/school"
+}
+var majorComments = {
+	attacked: "I was attacked/assaulted",
+	sick: "In the hospital",
+	call: "Call Me ASAP"
+	
+}
 function getLocation() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition);
@@ -9,7 +20,6 @@ function getLocation() {
 		x.innerHTML = "Geolocation is not supported by this browser.";
 	}
 }
-
 function showPosition(position) {
 	//inits and centers the map based on current user's location
 	var ltt = position.coords.latitude
@@ -39,6 +49,7 @@ function showPosition(position) {
 	var userName = database.ref('/' + familyCode + '/' + uid + '/name')
 	var userId = database.ref('/' + familyCode + '/' + uid + '/uid')
 	var famRef = database.ref('/' + familyCode)
+	var statusRef = database.ref('/' + familyCode + '/' + uid + '/status')
 	famRef.on('value', function(snapshot) {
 		snapshot.forEach(function(childSnapshot) {
 			var childData = childSnapshot.val()
@@ -90,5 +101,25 @@ function showPosition(position) {
 			tabImage.setAttribute("src", childData.pic)
 		})
 	})
-	return userLatitude.set(ltt) && userLongitude.set(lgt) && userPic.set(profile) && userName.set(name) && userId.set(uid)
+	return userLatitude.set(ltt) && userLongitude.set(lgt) && userPic.set(profile) && userName.set(name) && userId.set(uid) && statusRef.set(status)
+}
+var minor = document.getElementById('minorissue')
+var major = document.getElementById('majorissue')
+var ok = document.getElementById('noissue')
+var status
+var statusText = document.getElementById('')
+minor.onclick = function(){
+	status = "minor"
+	console.log(status)
+	document.getElementById('status').innerHTML = "Current status: " + status
+}
+major.onclick = function(){
+	status = "major"
+	console.log(status)
+	document.getElementById('status').innerHTML = "Current status: " + status
+}
+noissue.onclick = function(){
+	status = "OK"
+	console.log(status)
+	document.getElementById('status').innerHTML = "Current status: " + status
 }
